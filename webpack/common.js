@@ -5,7 +5,8 @@ const { join } = require('path')
 const paths = {
   root: join(__dirname, '..'),
   src: join(__dirname, '..', 'src'),
-  dist: join(__dirname, '..', 'dist')
+  dist: join(__dirname, '..', 'dist'),
+  normalizeCss: join(__dirname, '..', 'node_modules', 'normalize.css')
 }
 
 module.exports = {
@@ -19,14 +20,13 @@ module.exports = {
   },
 
   htmlPluginConfig: {
-    title: 'My app',
+    title: 'Markdown Editor',
     template: join(paths.src, 'html', 'template.html')
   },
 
   standardPreLoader: {
     enforce: 'pre',
     test: /\.js$/,
-    exclude: /node_modules/,
     include: paths.src,
     use: {
       loader: 'standard-loader',
@@ -38,15 +38,13 @@ module.exports = {
 
   jsLoader: {
     test: /\.js$/,
-    exclude: /node_modules/,
     include: paths.src,
     use: 'babel-loader'
   },
 
   cssLoader: {
     test: /\.css$/,
-    exclude: /node_modules/,
-    include: paths.src,
+    include: [paths.src, paths.normalizeCss],
     use: ['style-loader', 'css-loader']
   },
 
