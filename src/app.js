@@ -20,7 +20,7 @@ import('highlight.js').then(hljs => {
 class App extends Component {
   constructor() {
     super();
-    this.state = { value: '', isSaving: false };
+    this.state = { value: '', isSaving: null };
 
     this.handleChange = e => {
       this.setState({
@@ -43,6 +43,15 @@ class App extends Component {
     this.handleRemove = () => {
       localStorage.removeItem('md');
       this.setState({ value: '' });
+    };
+
+    this.handleCreate = () => {
+      this.setState({ value: '' });
+      this.textarea.focus();
+    };
+
+    this.textareaRef = node => {
+      this.textarea = node;
     };
   }
 
@@ -68,6 +77,8 @@ class App extends Component {
         handleChange={this.handleChange}
         getMarkup={this.getMarkup}
         handleRemove={this.handleRemove}
+        handleCreate={this.handleCreate}
+        textareaRef={this.textareaRef}
       />
     );
   }
