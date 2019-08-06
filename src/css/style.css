@@ -20,48 +20,48 @@ body {
 }
 
 .editor {
-  display: flex;
-  height: 100%;
   width: 100%;
-}
-
-form {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  height: 100%;
 }
 
-form,
+.editor-header {
+  height: 40px;
+  width: 100%;
+  justify-content: flex-end;
+  display: flex;
+  background: #222;
+}
+
+.editor-header .save-message {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  font: 15px sans-serif;
+  margin: 0;
+  padding: 0 20px;
+}
+
+textarea,
 .view {
+  height: 100%;
   min-width: 50%;
   max-width: 50%;
 }
 
 textarea {
-  border: 8px solid #fc0;
   font-size: 18px;
   padding: 10px;
   resize: none;
-  width: 100%;
 }
 
 textarea:focus {
   outline: 0 none;
 }
 
-button {
-  background: linear-gradient(#ff0, #fa0);
-  border: 3px solid #fd0;
-  color: #333;
-  font-size: 20px;
-  font-weight: 700;
-  height: 15%;
-  margin: 0;
-  text-transform: uppercase;
-  transition: all 0.15s ease-in-out;
-  width: 100%;
-}
-
 .view {
+  font-family: sans-serif;
   background: #333;
   color: #fff;
   padding: 10px;
