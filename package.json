@@ -1,14 +1,16 @@
 {
   "scripts": {
+    "prod": "cross-env NODE_ENV=production node index.js",
     "start": "webpack-dashboard -- node server.js",
     "test": "jest --coverage",
     "test:watch": "yarn test -- --watch",
     "lint": "standard --parser babel-eslint --verbose | snazzy",
     "lint:watch": "gulp",
     "lint:fix": "standard --fix",
-    "build": "cross-env NODE_ENV=production webpack --progress --config webpack/prod.config -p",
+    "build": "cross-env NODE_ENV=production BABEL_ENV=production   webpack --progress --config webpack/prod.config -p",
+    "build:analyzer": "cross-env ANALYZER=true yarn build",
     "storybook": "start-storybook -p 6006 -c storybook",
-    "build-storybook": "cross-env NODE_ENV=production build-storybook -c storybook",
+    "build-storybook": "cross-env NODE_ENV=production BABEL_ENV=production  build-storybook -c storybook",
     "update-packages": "node scripts/update.js"
   },
   "devDependencies": {
@@ -42,11 +44,20 @@
   },
   "dependencies": {
     "babel-runtime": "^6.22.0",
+    "compression": "^1.7.4",
+    "express": "^4.17.1",
     "highlight.js": "^9.15.9",
     "marked": "^0.7.0",
     "normalize.css": "^8.0.1",
+    "preact": "^8.5.0",
+    "preact-compat": "^3.19.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "webpack-bundle-analyzer": "^3.4.1"
+  },
+  "standart": {
+    "globals": [
+      "localStorage"
+    ]
   }
 }
