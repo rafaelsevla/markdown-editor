@@ -1,6 +1,6 @@
-'use strict'
+'use strict';
 
-const { join } = require('path')
+const { join } = require('path');
 
 const paths = {
   root: join(__dirname, '..'),
@@ -8,7 +8,7 @@ const paths = {
   dist: join(__dirname, '..', 'dist'),
   normalizeCss: join(__dirname, '..', 'node_modules', 'normalize.css'),
   highlightJs: join(__dirname, '..', 'node_modules', 'highlight.js', 'styles')
-}
+};
 
 module.exports = {
   paths,
@@ -78,7 +78,8 @@ module.exports = {
     alias: {
       src: paths.src,
       components: join(paths.src, 'components'),
-      utils: join(paths.src, 'utils')
+      utils: join(paths.src, 'utils'),
+      views: join(paths.src, 'views')
     }
   }
-}
+};
