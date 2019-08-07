@@ -48,11 +48,14 @@
     "express": "^4.17.1",
     "highlight.js": "^9.15.9",
     "marked": "^0.7.0",
+    "node-uuid": "1.4.8",
     "normalize.css": "^8.0.1",
     "preact": "^8.5.0",
     "preact-compat": "^3.19.0",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
+    "prop-types": "15.5.8",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "strclass": "^2.0.9",
     "webpack-bundle-analyzer": "^3.4.1"
   },
   "standart": {

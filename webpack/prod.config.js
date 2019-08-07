@@ -1,14 +1,14 @@
-'use strict'
+'use strict';
 
-const webpack = require('webpack')
-const common = require('./common')
+const webpack = require('webpack');
+const common = require('./common');
 
-const HtmlPlugin = require('html-webpack-plugin')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const CleanPlugin = require('clean-webpack-plugin')
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
+const HtmlPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CleanPlugin = require('clean-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
-process.traceDeprecation = true
+process.traceDeprecation = true;
 
 module.exports = {
   entry: common.entry,
@@ -48,10 +48,10 @@ module.exports = {
         minify: { collapseWhitespace: true },
 
         chunksSortMode: (chunk1, chunk2) => {
-          const order = ['react-build', 'vendor', 'main']
-          const left = order.indexOf(chunk1.names[0])
-          const right = order.indexOf(chunk2.names[0])
-          return left - right
+          const order = ['react-build', 'vendor', 'main'];
+          const left = order.indexOf(chunk1.names[0]);
+          const right = order.indexOf(chunk2.names[0]);
+          return left - right;
         }
       })
     ),
@@ -62,6 +62,7 @@ module.exports = {
   ].concat(process.env.ANALYZER ? new BundleAnalyzerPlugin() : []),
 
   module: {
+    noParse: common.module.noParse,
     rules: [
       common.standardPreLoader,
       common.jsLoader,
@@ -82,4 +83,4 @@ module.exports = {
       'react-dom': 'preact-compat'
     })
   }
-}
+};
