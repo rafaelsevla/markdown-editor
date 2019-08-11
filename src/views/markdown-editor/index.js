@@ -1,9 +1,9 @@
-'use strict';
+'use strict'
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import Header from './header';
-import Files from './files';
+import React from 'react'
+import PropTypes from 'prop-types'
+import Header from './header'
+import Files from './files'
 
 const MarkdownEditor = ({
   value,
@@ -14,7 +14,7 @@ const MarkdownEditor = ({
   handleOpenFile,
   ...props
 }) => (
-  <section className="editor">
+  <section className='editor'>
     <Header {...props} handleChange={handleChange} />
     <Files files={files} handleOpenFile={handleOpenFile} />
 
@@ -25,15 +25,15 @@ const MarkdownEditor = ({
       ref={textareaRef}
     />
 
-    <article className="view" dangerouslySetInnerHTML={getMarkup()} />
+    <article className='view' dangerouslySetInnerHTML={getMarkup()} />
   </section>
-);
+)
 
 MarkdownEditor.propTypes = {
   value: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired,
   getMarkup: PropTypes.func.isRequired,
   textareaRef: PropTypes.func.isRequired
-};
+}
 
-export default MarkdownEditor;
+export default MarkdownEditor

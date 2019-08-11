@@ -1,10 +1,9 @@
-'use strict';
+'use strict'
 
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
 
 const Files = ({ files, handleOpenFile }) => (
-  <div className="files-list-container">
+  <div className='files-list-container'>
     <h2>Files</h2>
     <ul>
       {Object.keys(files).map(fileId => (
@@ -16,8 +15,6 @@ const Files = ({ files, handleOpenFile }) => (
       ))}
     </ul>
   </div>
-);
+)
 
-Files.propTypes = {};
-
-export default Files;
+export default Files

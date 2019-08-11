@@ -1,10 +1,10 @@
-'use strict';
+'use strict'
 
-const webpack = require('webpack');
-const common = require('./common');
+const webpack = require('webpack')
+const common = require('./common')
 
-const HtmlPlugin = require('html-webpack-plugin');
-const DashboardPlugin = require('webpack-dashboard/plugin');
+const HtmlPlugin = require('html-webpack-plugin')
+const DashboardPlugin = require('webpack-dashboard/plugin')
 
 module.exports = {
   devtool: 'source-map',
@@ -40,4 +40,4 @@ module.exports = {
   },
 
   resolve: common.resolve
-};
+}
