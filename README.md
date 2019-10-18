@@ -18,12 +18,12 @@
 - Clone this repository: `git clone git@github.com:rafaelsevla/markdown-editor.git`;
 - Remove `.git` directory;
 - Install dependencies: `yarn` (or `npm i`);
-- Run `yarn start` (or `npm start`) to develop on `http://localhost:3000`
+- Run `yarn dev` (or `npm run dev`) to develop on `http://localhost:3000`
 - Run `yarn build` (or `npm run build`) for production build (files will be generated on `dist` directory)
 
 ## Scripts
 
-- `yarn start (or npm start)`: Starts the application
+- `yarn dev (or npm run dev)`: Starts the application in development mode
 - `yarn test (or npm test)`: Run tests once
 - `yarn test:watch (or npm run test:watch)`: Run tests in watch mode
 - `yarn build (or npm run build)`: Build project to production
